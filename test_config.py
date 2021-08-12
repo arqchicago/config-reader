@@ -22,9 +22,14 @@ print(f'strings')
 print(f'> parameter 1 = {config.get("string_vars", "parameter1")}')
 print(f'> parameter 2 = {config.get("string_vars", "parameter2")}')
 print(f'> parameter 3 = {config.get("string_vars", "parameter3")}')
-print(f'> parameter 4 = {config.get("string_vars", "parameter4")}')
+print(f'> parameter 4 = {config.get("string_vars", "parameter4")}\n')
 
 # config.getboolean: to read boolean parameters
+print(f'booleans')
+print(f'> parameter 1 = {config.getboolean("boolean_vars", "parameter1")}')
+print(f'> parameter 2 = {config.getboolean("boolean_vars", "parameter2")}')
+print(f'> parameter 3 = {config.getboolean("boolean_vars", "parameter3")}')
+print(f'> parameter 4 = {config.getboolean("boolean_vars", "parameter4")}')
 
 #with open('config.ini', 'w') as config_file:
 #    config.write(config_file)
