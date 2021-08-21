@@ -29,7 +29,21 @@ print(f'booleans')
 print(f'> parameter 1 = {config.getboolean("boolean_vars", "parameter1")}')
 print(f'> parameter 2 = {config.getboolean("boolean_vars", "parameter2")}')
 print(f'> parameter 3 = {config.getboolean("boolean_vars", "parameter3")}')
-print(f'> parameter 4 = {config.getboolean("boolean_vars", "parameter4")}')
+print(f'> parameter 4 = {config.getboolean("boolean_vars", "parameter4")}\n')
+
+# config.get: to read lists
+print(f'lists')
+string_list = config.get("lists", "list1")
+string_list = string_list.split(',')
+print(f'> string list = {string_list}')
+
+float_list = config.get("lists", "list2")
+float_list = [float(x) for x in float_list.split(',')]
+print(f'> float list = {float_list}')
+
+bool_list = config.get("lists", "list3")
+bool_list = [True if x in 'True' else False for x in bool_list.split(', ')]
+print(f'> bool list = {bool_list}\n')
 
 #with open('config.ini', 'w') as config_file:
 #    config.write(config_file)
