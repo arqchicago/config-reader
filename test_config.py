@@ -45,5 +45,17 @@ bool_list = config.get("lists", "list3")
 bool_list = [True if x in 'True' else False for x in bool_list.split(', ')]
 print(f'> bool list = {bool_list}\n')
 
+
+# config._sections to read sections as python dictionary
+config2 = configparser.ConfigParser()
+config2.read('config2.ini')
+config_sections = config2._sections
+
+print(f'reading config sections as a dictionary')
+print(f'> integers = {config_sections["integer_vars"]}')
+print(f'> floats = {config_sections["float_vars"]}')
+print(f'> strings = {config_sections["string_vars"]}')
+print(f'> booleans = {config_sections["boolean_vars"]}')
+
 #with open('config.ini', 'w') as config_file:
 #    config.write(config_file)
